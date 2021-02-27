@@ -1,0 +1,99 @@
+.padd {
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+
+.margin_n {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+
+p.dotted {
+  border-style: dotted;
+}
+p.dashed {
+  border-style: dashed;
+}
+p.solid {
+  border-style: solid;
+}
+p.double {
+  border-style: double;
+}
+p.groove {
+  border-style: groove;
+}
+p.ridge {
+  border-style: ridge;
+}
+p.inset {
+  border-style: inset;
+}
+p.outset {
+  border-style: outset;
+}
+p.none {
+  border-style: none;
+}
+p.hidden {
+  border-style: hidden;
+}
+p.mix {
+  border-style: dotted dashed solid double;
+}
+
+/* div { 
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}*/
+
+#example1 {
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+#example2 {
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 50px 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: #ee1e1e;
+}
+
+.flex-container > div {
+  justify-items: flex-end;
+  background-color: #f1f1f1;
+  width: 100%;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196f3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
