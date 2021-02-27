@@ -1,1 +1,3 @@
-# 30daysofreact
+# 30 Days of React
+
+## This repository contains my learning about Reactjs during the #30daysofreactjs challenge...
