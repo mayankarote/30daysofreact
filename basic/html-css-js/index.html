@@ -274,12 +274,111 @@ Using Symbol() to create a unique identifiers, solves this problem:</h4>
             isFinite(10 / 0) + "<br>" + isFinite(10 / 1);
     </script>
     <h4>The isNaN():The global isNaN() method returns true if the argument is NaN. Otherwise it returns false:</h4>
-    
+
         <p id="demo_globall"></p>
         <script>
             document.getElementById("demo_globall").innerHTML =
                 isNaN("Hello") + "<br>" + isNaN("10");
         </script>
+<h1 style="color: red;">Array/Object Destructuring</h1>
+<h3>Basic Array Destructuring</h3>
+    <script>
+       let [greeting, pronoun] = ["Hello", "I", "am", "Sarah"];
+ 
+        console.log(greeting);//"Hello"
+        console.log(pronoun);//"I"
+    </script>
+
+<h3>Declaring Variables before Assignment</h3>
+<script>
+    let greeting, pronoun;
+    [greeting, pronoun] = ["Hello", "I", "am", "Sarah"];
+
+    console.log(greeting);//"Hello"
+    console.log(pronoun);//"I"
+</script>
+
+<h3>Skipping Items in an Array</h3>
+<script>
+    let [greeting, , , name] = ["Hello", "I", "am", "Sarah"];
+
+    console.log(greeting);//"Hello"
+    console.log(name);//"Sarah"
+</script>
+
+<h3>Assigning the rest of an array</h3>
+<script>
+    let [greeting, ...intro] = ["Hello", "I", "am", "Sarah"];
+
+    console.log(greeting);//"Hello"
+    console.log(intro);//["I", "am", "Sarah"]
+
+</script>
+
+<h3>Destructuring Assignment with Functions</h3>
+<script>
+    function getArray() {
+       return ["Hello", "I", "am", "Sarah"];
+    }
+    let [greeting, pronoun] = getArray();
+    console.log(greeting);//"Hello"
+    console.log(pronoun);//"I"
+</script>
+
+<h3>Swapping Values using the Destructuring Assignment</h3>
+<script>
+    let a = 3;
+    let b = 6;
+    [a, b] = [b, a];
+
+    console.log(a);//6
+    console.log(b);//3
+</script>
+
+<h1 style="color: red;">Basic Object Destructuring</h1>
+
+<script>
+    function getArray() {
+       return ["Hello", "I", "am", "Sarah"];
+    }
+    let [greeting, pronoun] = getArray();
+    console.log(greeting);//"Hello"
+    console.log(pronoun);//"I"
+</script>
+
+<h3>Using a new Variable Name</h3>
+<p>If we want to assign values of an object to a new variable instead of using the name of the property, we can do this:</p>
+<script>
+   let person = { name: "Sarah", country: "Nigeria", job: "Developer" };
+
+    let { name: foo, job: bar } = person;
+
+    console.log(foo);//"Sarah"
+    console.log(bar);//"Developer"
+
+</script>
+
+<h3>Combining Arrays with Objects</h3>
+<script>
+    let person = { name: "Sarah", country: "Nigeria", friends: ["Annie", "Becky"] };
+
+        let { name: foo, friends: bar } = person;
+
+        console.log(foo);//"Sarah"
+        console.log(bar);//["Annie", "Becky"]
+
+</script>
+
+<h3>Rest in Object Destructuring</h3>
+<script>
+    let person = { name: "Sarah", country: "Nigeria", job: "Developer" friends: ["Annie", "Becky"] };
+
+        let { name, friends, ...others } = person;
+
+        console.log(name);//"Sarah"
+        console.log(friends);//["Annie", "Becky"]
+        console.log(others);// {country: "Nigeria", job: "Developer"}
+</script>
 
 </body>
 </html>
