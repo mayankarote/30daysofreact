@@ -72,13 +72,9 @@ The for/of loop has the following syntax:
     }
 variable - For every iteration the value of the next property is assigned to the variable. Variable can be declared with const, let, or var.
 iterable - An object that has iterable properties.</h4>
-
-<h2>JavaScript For/Of Loop</h2>
-
-<p>The for/of statement loops through the values of an iterable object.</p>
+<p>Looping</p>
 
 <p id="demo4"></p>
-
 <script>
     let cars = ["BMW", "Volvo", "Mini"];
     let text = "";
@@ -86,9 +82,9 @@ iterable - An object that has iterable properties.</h4>
     for (let m of cars) {
         text += m + "<br>";
     }
-
     document.getElementById("demo4").innerHTML = text.fontcolor("blue");
 </script>
+
 <h4>Looping over string</h4>
 <p id="demo7"></p>
 <script>
@@ -99,6 +95,63 @@ iterable - An object that has iterable properties.</h4>
         txt += n + "<br>";
     }
     document.getElementById("demo7").innerHTML = txt.fontcolor("blue");
+</script>
+
+<h1 style="color: red;">JavaScript Classes</h1>
+<h4>JavaScript Classes are templates for JavaScript Objects.
+    Use the keyword class to create a class. Always add a method named constructor()</h4>
+
+    <p id="demo_class"></p>
+
+    <script>
+        class Car {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+        }
+
+        myCar = new Car("Ford", 2014);
+        document.getElementById("demo_class").innerHTML =
+            myCar.name + " " + myCar.year;
+    </script>
+
+<h1 style="color: red;">JavaScript Promises</h1>
+<h1 id="demo_promises"></h1>
+
+<script>
+    let myPromise = new Promise((resolve, reject) => {
+        let a = 1 + 3;
+        if (a == 2) {
+            setTimeout(function () { resolve("Correct !!"); }, 3000);
+        } else {
+            setTimeout(function () { resolve("Wrong !!"); }, 3000);
+        }
+    });
+
+    myPromise.then((value) => {
+        document.getElementById("demo_promises").innerHTML = value;
+    }).catch((value) => {
+        document.getElementById("demo_promises").innerHTML = value;
+    })
+</script>
+
+<h4>Other Example of Promises</h4>
+<p id="demo_promise1"></p>
+<script>
+    const recordVideoOne = new Promise((resolve, reject)=>{
+        resolve('Video 1 Recorded');
+    })
+    const recordVideoTwo = new Promise((resolve, reject) => {
+            resolve('Video 2 Recorded');
+        })
+
+    const recordVideoThree = new Promise((resolve, reject) => {
+        resolve('Video 3 Recorded');
+    })
+Promise.all([recordVideoOne, recordVideoTwo, recordVideoThree]).then((messages)=>{
+    document.getElementById(demo_promise1).innerHTML=messages;
+})
 </script>
 
 </body>
