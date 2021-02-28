@@ -153,6 +153,7 @@ Promise.all([recordVideoOne, recordVideoTwo, recordVideoThree]).then((messages)=
     document.getElementById(demo_promise1).innerHTML= messages;
 })
 </script>
+
 <h1 style="color: red;">Symbol Type</h1>
 <h4>A JavaScript Symbol is a primitive datatype just like Number, String, or Boolean.
 It represents a unique "hidden" identifier that no other code can accidentally access.
@@ -280,6 +281,8 @@ Using Symbol() to create a unique identifiers, solves this problem:</h4>
             document.getElementById("demo_globall").innerHTML =
                 isNaN("Hello") + "<br>" + isNaN("10");
         </script>
+
+
 <h1 style="color: red;">Array/Object Destructuring</h1>
 <h3>Basic Array Destructuring</h3>
     <script>
@@ -371,7 +374,7 @@ Using Symbol() to create a unique identifiers, solves this problem:</h4>
 
 <h3>Rest in Object Destructuring</h3>
 <script>
-    let person = { name: "Sarah", country: "Nigeria", job: "Developer" friends: ["Annie", "Becky"] };
+    let person = { name: "Sarah", country: "Nigeria", job: "Developer", friends: ["Annie", "Becky"] };
 
         let { name, friends, ...others } = person;
 
