@@ -27,25 +27,79 @@
     }
     // Here x is 10
     document.getElementById("demo2").innerHTML = x;
-    document.getElementById("demo3").innerHTML = z;
+    document.getElementById("demo3").innerHTML = z
 </script>
 
 <h1 style="color: red;">The Const Keyword </h1>
 <h3>The const keyword allows you to declare a constant (a JavaScript variable with a constant value). Constants are similar to let variables, except that the value cannot be changed.</h3>
 
-    <p id="demoo"></p> 
-    <p id="demoo1"></p>
+    <p id="pq1"></p> 
+    <p id="pq"></p>
     <script>
-        var x = 10;
+        var p = 10;
         // Here x is 10
         {
-            const x = 2;
+            const q = 2;
             // Here x is 2
-            document.getElementById("demoo1").innerHTML = x;
+            document.getElementById("pq").innerHTML = q;
          }
         // Here x is 10
-        document.getElementById("demoo").innerHTML = x;
+        document.getElementById("pq1").innerHTML = p;
     </script>
+
+<h1 style="color: red;">Arrow Fuctions </h1>
+<h3>Arrow functions allows a short syntax for writing function expressions.
+You don't need the function keyword, the return keyword, and the curly brackets.</h3>
+<p id="demo6"></p>
+
+<script>
+    // var x = function (x, y) {
+    //         return x * y;
+    //     }
+    const a = (b, c) => b * c;
+    document.getElementById("demo6").innerHTML = a(5, 5);
+</script>
+
+<h4>Arrow functions do not have their own this. They are not well suited for defining object methods. Arrow functions are not hoisted. They must be defined before they are used.
+Using const is safer than using var, because a function expression is always a constant value. You can only omit the return keyword and the curly brackets if the function is a single statement. Because of this, it might be a good habit to always keep them:</h4>
+
+<h1 style="color: red;">For/of loop</h1>
+<h4>The JavaScript for/of statement loops through the values of an iterable objects.
+for/of lets you loop over data structures that are iterable such as Arrays, Strings, Maps, NodeLists, and more.
+The for/of loop has the following syntax:
+    for (variable of iterable) {
+    // code block to be executed
+    }
+variable - For every iteration the value of the next property is assigned to the variable. Variable can be declared with const, let, or var.
+iterable - An object that has iterable properties.</h4>
+
+<h2>JavaScript For/Of Loop</h2>
+
+<p>The for/of statement loops through the values of an iterable object.</p>
+
+<p id="demo4"></p>
+
+<script>
+    let cars = ["BMW", "Volvo", "Mini"];
+    let text = "";
+
+    for (let m of cars) {
+        text += m + "<br>";
+    }
+
+    document.getElementById("demo4").innerHTML = text.fontcolor("blue");
+</script>
+<h4>Looping over string</h4>
+<p id="demo7"></p>
+<script>
+    let language = "JavaScript";
+    let txt = "";
+
+    for (let n of language) {
+        txt += n + "<br>";
+    }
+    document.getElementById("demo7").innerHTML = txt.fontcolor("blue");
+</script>
 
 </body>
 </html>
