@@ -68,14 +68,14 @@ p.mix {
 
 .flex-container {
   display: flex;
-  flex-direction: row-reverse;
-  flex-direction: column;
+  /* flex-direction: row-reverse; */
+  /* flex-direction: column; */
   flex-wrap: nowrap;
   background-color: #ee1e1e;
 }
 
 .flex-container > div {
-  justify-items: flex-end;
+  /* justify-items: flex-end; */
   background-color: #f1f1f1;
   width: 100%;
   margin: 10px;
