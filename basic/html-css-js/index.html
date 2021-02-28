@@ -150,9 +150,136 @@ iterable - An object that has iterable properties.</h4>
         resolve('Video 3 Recorded');
     })
 Promise.all([recordVideoOne, recordVideoTwo, recordVideoThree]).then((messages)=>{
-    document.getElementById(demo_promise1).innerHTML=messages;
+    document.getElementById(demo_promise1).innerHTML= messages;
 })
 </script>
+<h1 style="color: red;">Symbol Type</h1>
+<h4>A JavaScript Symbol is a primitive datatype just like Number, String, or Boolean.
+It represents a unique "hidden" identifier that no other code can accidentally access.
+For instance, if different coders want to add a person.id property to a person object belonging to a third-party code,they could mix each others values.
+Using Symbol() to create a unique identifiers, solves this problem:</h4>
+
+<p id="demo_symbol"></p>
+<p id="demo1_symbol"></p>
+
+<script>
+    const person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue"
+    };
+
+    const person1 = {
+        firstName: "vampire",
+        lastName: "xyz",
+        age: 100,
+        eyeColor: "red"
+    };
+
+    let id = Symbol('id');
+    person.id = 140353;
+    person1.id = 56767;
+
+    document.getElementById("demo_symbol").innerHTML = person.id;
+    document.getElementById("demo1_symbol").innerHTML = person1.id;
+</script>
+
+<h1 style="color: red;">Default Parameter Values</h1>
+<p id="demo_values"></p>
+<script>
+    function myFunction(x, y = 15) {
+        // y is 10 if not passed or undefined
+        return x + y;
+    }
+    document.getElementById("demo_values").innerHTML = myFunction(5);
+</script>
+
+    <h3>JavaScript Function Rest Parameter</h3>
+    <p>The rest parameter (...) allows a function to treat an indefinite number of arguments as an array:</p>
+    
+    <p id="demo_rest"></p>
+    <script>
+        function sum(...args) {
+            let sum = 0;
+            for (let arg of args) sum += arg;
+            return sum;
+        }
+        let x_r = sum(4, 9, 16, 25, 29, 100, 66, 77);
+        document.getElementById("demo_rest").innerHTML = x_r;
+    </script>
+
+<h1 style="color: red;">Array.find()</h1>
+<h4>1.The item value
+    2.The item index
+    3.The array itself
+
+    Array.findIndex():-The findIndex() method returns the index of the first array element that passes a test function.</h4>
+<p id="demo_find"></p>
+
+<script>
+    var numbers = [4, 9, 16, 25, 29];
+    var first = numbers.find(myFunction);
+    document.getElementById("demo_find").innerHTML = "First number over 18 is " + first;
+    function myFunction(value, index, array) {
+        return value > 18;
+    }
+</script>
+
+<h1 style="color: red;">New Number Properties</h1>
+    
+    <p>1.EPSILON</p>
+    <p>2.MIN_SAFE_INTEGER</p>
+    <p>3.MAX_SAFE_INTEGER</p>
+    
+    <p id="demo_EPSILON"></p>
+    <p id="demo_MIN_SAFE_INTEGER"></p>
+    <p id="demo_MAX_SAFE_INTEGER"></p>
+    
+    <script>
+        var x_EPSILON = Number.EPSILON;
+        document.getElementById("demo_EPSILON").innerHTML = x_EPSILON;
+
+        var x_MIN_SAFE_INTEGER = Number.MIN_SAFE_INTEGER;
+        document.getElementById("demo_MIN_SAFE_INTEGER").innerHTML = x_MIN_SAFE_INTEGER;
+
+        var x_MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER;
+        document.getElementById("demo_MAX_SAFE_INTEGER").innerHTML = x_MAX_SAFE_INTEGER;
+    </script>
+<h1 style="color: red;">New Number Methods</h1>
+<h4>1.Number.isInteger(): The Number.isInteger() method returns true if the argument is an integer. Otherwise it returns false</h4>
+    
+    <p id="demo_method"></p>
+    <script>
+        document.getElementById("demo_method").innerHTML =
+            Number.isInteger(10) + "<br>" + Number.isInteger(10.5);
+    </script>
+
+<h4>2.Number.isSafeInteger(): A safe integer is an integer that can be exactly represented as a double precision number. The Number.isSafeInteger() method returns true if the argument is a safe integer.Otherwise it returns false.</h4>
+    
+    <p id="demo_method1"></p>
+    <script>
+        document.getElementById("demo_method1").innerHTML =
+            Number.isSafeInteger(10) + "<br>" + Number.isSafeInteger(12345678901234567890);
+    </script>
+
+<h1 style="color: red;">New Global Methods</h1>
+    ES6 added 2 new global number methods:
+    
+    <h4>1.The isFinite(): The global isFinite() method returns false if the argument is Infinity or NaN. Otherwise it returns true:</h4>
+
+    <p id="demo_global"></p>
+    <script>
+        document.getElementById("demo_global").innerHTML =
+            isFinite(10 / 0) + "<br>" + isFinite(10 / 1);
+    </script>
+    <h4>The isNaN():The global isNaN() method returns true if the argument is NaN. Otherwise it returns false:</h4>
+    
+        <p id="demo_globall"></p>
+        <script>
+            document.getElementById("demo_globall").innerHTML =
+                isNaN("Hello") + "<br>" + isNaN("10");
+        </script>
 
 </body>
 </html>
