@@ -6,7 +6,7 @@
     <title>JavaScript</title>
 </head>
 <body>
-    <h1 style="color: darkorange; text-align: center;">ES6</h1>
+    <h1 style="color: darkred; text-align: center;">ES6</h1>
     <hr>
 <h2 style="color: red;">The let Keyword </h2>
 <h3>The let keyword allows you to declare a variable with block scope.</h3>
@@ -415,7 +415,7 @@ The rest parameters must be the last arguments of a function. However, the sprea
 </script>
 <hr>
 
-<h1 style="color: darkorange; text-align: center;">ES7</h1>
+<h1 style="color: darkred; text-align: center;">ES7</h1>
 <hr>
 <h2 style="color: red;">Array.Prototype.include()</h2>
 <h4>Array.prototype.includes() checks the array for the value passed as an argument. It returns true if the array contains the value, otherwise, it returns false.
@@ -433,6 +433,30 @@ when comparing NaN to another value. These are addressed in Array.prototype.incl
 <script>
     let base = 3; let exponent = 4; let result = base ** exponent;
     console.log(result); //81
+</script>
+<hr>
+
+<h1 style="color: darkred; text-align: center;">ES8</h1>
+<hr>
+<h2>Async Function</h2>
+<h4>Asynchronous code is at the core of JavaScript, and ES8 has officially added the ability to declare a function as async.
+By adding the async keyword in front of a function, you are able to defer the execution of code using the awaitstatement. The return value of an async function is implicitly a promise object</h4>
+
+<script>
+    async function getDataFromAjax(url) {
+        let data;
+        try {
+            data = await fetch(url);
+            // This will wait 
+            // until fetch returns
+            fillClientStateWithData(data.json());
+        } catch (error) {
+            // This will execute if the
+            // API returns an error
+            handleAjaxError(error);
+        }
+    }
+    getDataFromAjax();
 </script>
 </body>
 </html>
