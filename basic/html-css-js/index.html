@@ -458,6 +458,29 @@ By adding the async keyword in front of a function, you are able to defer the ex
     getDataFromAjax();
 </script>
 
+<h2 style="color: red;">Padding a String</h2>
+<h4>two string handling functions for padding a string. These functions can be used to add space or any
+desired set of characters to the beginning and end of a string value.
+</h4>
+<h3>String. padStart(): </h3><p>This function pads the current string with a given input string repeatedly from the start, till the current string reaches the given length. 
+The padStart() function accepts two parameters which are as follows −
+
+<u>targetLength</u> − A numeric value that represents the target length of the string after padding. If the value of this
+parameter is lesser than or equal to the existing length of the string, the string value is returned as it is.
+
+<u>padString</u> − This is an optional parameter. This parameter specifies the characters that should be used to pad thestring. The string value is padded with spaces if no value is passed to this parameter.</p>
+<script>
+            //pad the String with 0
+            let product_cost = '1699'.padStart(7,0)
+            console.log(product_cost)
+            console.log(product_cost.length)
+
+            //pad the String with blank spaces
+            let product_cost1 = '1699'.padStart(7)
+            console.log(product_cost1)
+            console.log(product_cost1.length)
+            //output:-0001699 , 7, 1699,7
+   </script>
 
 </body>
 </html>
