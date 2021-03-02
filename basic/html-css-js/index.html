@@ -437,9 +437,17 @@ NaN is a property of the JavaScript global object and represents a value that is
 
 <h1 style="color: darkred; text-align: center;">ES8</h1>
 <hr>
-<h2>Async Function</h2>
-<h4>Asynchronous code is at the core of JavaScript, and ES8 has officially added the ability to declare a function as async.
-By adding the async keyword in front of a function, you are able to defer the execution of code using the awaitstatement. The return value of an async function is implicitly a promise object</h4>
+<h2>Async and Await Function</h2>
+<h4>Async/Await is a very important feature in ES8.It is a syntactic sugar for Promises in JavaScript. The await keyword is
+used with promises. This keyword can be used to pause the execution of a function till a promise is settled. The await
+keyword returns value of the promise if the promise is resolved while it throws an error if the promise is rejected. The
+await function can only be used inside functions marked as async. A function that is declared using the async keyword
+always returns a promise.
+</h4>
+<p>The function can be invoked in two ways as shown below
+
+1. Using promise.then()
+2. Using aync/await.</p>
 
 <script>
     async function getDataFromAjax(url) {
@@ -517,5 +525,62 @@ parameter is lesser than or equal to the existing length of the string, the stri
     })
     //output-4,[100, 90, 80, empty],100,90,80
 </script>
+    <p>
+    Trailing commas and function call:- Trailing commas, passed as arguments, when defining or invoking a function are ignored by JavaScript runtime engine.
+    However, there are two exceptions −
+        1. Function definitions or invocation that contains only a comma will result in SyntaxError.
+        2.Trailing commas cannot be used with rest parameters.
+        Example:-</p>
+    <script>
+
+        function sumOfMarks(marks,) { // trailing commas are ignored
+            let sum = 0;
+            marks.forEach(function (e) {
+                sum += e;
+            })
+            return sum;
+        }
+
+        console.log(sumOfMarks([10, 20, 30]))
+        console.log(sumOfMarks([1, 2, 3],))// trailing comma is ignored
+       // output- 60, 6
+    </script>
+
+    <h2>Object:entries() and values():</h2>
+    <h4>1. Object.entries − The Object.entries() method can be used to access all the properties of an object.
+    
+    2. Object.values() − The Object.values() method can be used to access values of all properties of an object.
+    
+    3. Object.getOwnPropertyDescriptors() − This method returns an object containing all own property descriptors of an object. An empty object may be returned if the object doesn't have any properties.</h4>
+    <script>
+        const student = {
+            firstName: 'Kannan',
+            lastName: 'Sudhakaran'
+        }
+        console.log(Object.entries(student))
+        console.log(Object.values(student))
+    </script>
+    <p>Output[
+    ["firstName", "Kannan"],
+    ["lastName", "Sudhakaran"],
+    ]
+    ["Kannan", "Sudhakaran"]</p>
+
+    <script>
+        const student = {
+            firstName: 'Mohtashim',
+            lastName: 'Mohammad',
+            get fullName() {
+                return this.firstName + ':' + this.lastName
+            }
+        }
+        console.log(Object.getOwnPropertyDescriptors(student))
+    </script>
+    <p>Output:- {firstName: {value: "Mohtashim", writable: true, enumerable: true, configurable: true}
+    fullName: {get: ƒ, set: undefined, enumerable: true, configurable: true}
+    lastName: {value: "Mohammad", writable: true, enumerable: true, configurable: true}
+    }
+</p>
+
 </body>
 </html>
