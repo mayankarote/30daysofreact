@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="namevalue"></p>
+    <input type="text" name="" id="name" placeholder="name" />
+  </body>
+  <script>
+    const nameInput = document.getElementById("name");
+    const namevalue = document.getElementById("namevalue");
+    const handleKeyDown = (event) => {
+        if(event.key==='Backspace'){
+            namevalue.innerText = namevalue.innerText.slice(0,-1)
+        }else{
+            const plainchar = event.key
+            const asciichar = plainchar.charCodeAt(0)
+            const newAsciiChar = asciichar + 1
+            const newPlainChar = String.fromCharCode(newAsciiChar)
+            namevalue.innerText += newPlainChar
+        }
+
+    }
+    nameInput.addEventListener("keydown", handleKeyDown);
+    /*
+        abc > 65 
+        65 + 1 > 66
+        66 > b
+        
+    */
+  </script>
+</html>
