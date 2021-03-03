@@ -13,15 +13,17 @@
   <script>
     const nameInput = document.getElementById("name");
     const namevalue = document.getElementById("namevalue");
+    
     const handleKeyDown = (event) => {
+
         if(event.key==='Backspace'){
-            namevalue.innerText = namevalue.innerText.slice(0,-1)
-            //Array slice() :method selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.
+    
+          //Array slice() :method selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.
         }else if(event.key==='ArrowLeft'){
           
         }else if(event.key ==='ArrowRight'){
 
-        }else
+        }else{
             const plainchar = event.key
             const asciichar = plainchar.charCodeAt(0)
             const newAsciiChar = asciichar + 1
@@ -31,6 +33,7 @@
 
     }
     nameInput.addEventListener("keydown", handleKeyDown);
+    
     /*
         abc > 65 
         65 + 1 > 66
