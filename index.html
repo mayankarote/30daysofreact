@@ -20,5 +20,18 @@
         }
         ReactDOM.render(<Hello />, document.getElementById('mydiv'))
     </script>
+
+    <script>
+        const Child = () => <div>{`i'm a child! \o/`}</div>
+
+        class Parent extends React.Component {
+
+        render() {
+        return (<div>
+            <Child />
+        </div>);
+        }
+        }
+    </script>
 </body>
 </html>
