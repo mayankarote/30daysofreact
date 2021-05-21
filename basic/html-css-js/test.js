@@ -1,6 +1,16 @@
-const age = 12
-const name = 'abc'
-//your name is abc, and your age is 12
-const backtickex = `your name is ${name}, 
-and your age is ${age}`
-console.log(backtickex)
+import React, { useState } from 'react';  
+  
+function CountApp() {  
+  // Declare a new state variable, which we'll call "count"  
+  const [count, setCount] = useState(0);  
+  
+  return (  
+    <div>  
+      <p>You clicked {count} times</p>  
+      <button onClick={() => setCount(count + 1)}>  
+        Click me  
+      </button>  
+    </div>  
+  );  
+}  
+export default CountApp;  
