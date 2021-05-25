@@ -251,6 +251,30 @@
         const vegetable =  makeClass();
         const carrot =  new vegetable('carrot');
         console.log(carrot.name);
+
+        //Getters And Setters
+        class Book{
+            constructor(author){
+                this._author = author;
+                console.log(author);
+
+            }
+            //getter
+            get writer(){
+                return this._author;
+            }
+            //setter
+            set writer(updateAuthor) {
+                return this._author = updateAuthor;
+            }
+        }
+        const b1 = new Book("Mayu");
+        let author = b1.writer;
+        b1.writer="Sharu";
+        author =b1.writer;
+        console.log(author);
+        
+
     </script>
 </body>
 
