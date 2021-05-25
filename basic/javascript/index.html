@@ -167,7 +167,26 @@
         })();
         console.log(arry2);
         console.log(arry1);
+
+        //Destructuring Assignment
+        // var x = voxel.x;
+        // var y = voxel.y;
+        // var z = voxel.z;
         
+        // const{x:a,y:b,z:c} = voxel;
+        // console.log(a);
+        
+        const AVG_TEMPERATURE = {
+            today:77.5,
+            tommorow:79
+        };
+
+        function getTempofTmrrw(avgTemperature){
+            "use strict";
+            const {tommorow: tempofTommorow} =  avgTemperature;
+            return tempofTommorow;
+        }
+        console.log(getTempofTmrrw(AVG_TEMPERATURE));
     </script>
 </body>
 
