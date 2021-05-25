@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="index.js">
+    <title>Javascript</title>
+</head>
+
+<body>
+    <script>
+        var mystr = "Hello \"My name is mayanka\" i live in dhule";
+        console.log(mystr);
+
+        var mystr1 = "jello World";
+        mystr1 = "Hello world";
+        console.log(mystr1);
+
+        //Nested Array
+        var arrayNum = [["mayu", "1"], ["sharu", "2"]];
+        console.log(arrayNum);
+
+        //Multidimenstional array
+        var arrayNum1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9], 10, 11];
+        console.log(arrayNum1[2][1]);
+
+        //push
+        arrayNum.push(["Pranu", "3"], ["Abc", "4"])
+
+        // will pop all array of abc nd 4 value 
+        arrayNum.pop(["Abc", "4"])
+
+        //only pop last element
+        arrayNum.pop
+
+        //shift - pop element in 1st position in array
+        arrayNum.shift()
+
+        //unshift - push element in 1st position in array
+        arrayNum.unshift(["Mayu", "1"])
+
+        //add number in array in next line
+        function nextInline(arr, item) {
+            arr.push(item);
+            return arr.shift();
+        }
+        var testArr = [1, 2, 3, 4, 5];
+        console.log("Before:" + JSON.stringify(testArr));
+        console.log(nextInline(testArr, 6));
+        console.log("After:" + JSON.stringify(testArr));
+
+        //comparision and return boolean value
+        function compa(a, b) {
+            return a === b;
+            return a < b;
+        }
+        var test1 = 3;
+        var test2 = "3";
+        console.log(compa(test1, test2));
+        console.log(compa(10, 15))
+
+        //Object
+        var myDog = {
+            name: "Lili",
+            Age: 3,
+            favfood: ["Ice-cream", "pizza"]
+        };
+        console.log(myDog.favfood, myDog["Age"], myDog.name = "Lily", myDog.legs = "4")
+        console.log(myDog);
+
+        //Object of property
+        function checkObj(checkProp) {
+            if (myDog.hasOwnProperty(checkProp)) {
+                return myDog[checkProp];
+            } else {
+                return "Not Found";
+            }
+        }
+        console.log(checkObj("favfood"))
+
+        //nested Object
+
+        var myDog = {
+            name: "Lili",
+            Age: 3,
+            favfood: {
+                sweat: "ice-cream",
+                spicy: "pizza"
+            }
+        };
+        console.log(myDog.favfood.sweat); //myDog.favfood[spicy]
+
+        //random Number (decimal number)
+        function randomFraction() {
+            return Math.random();
+        }
+        console.log(randomFraction());
+
+        //random Number (Whole number)
+        function randomFraction() {
+            return Math.floor(Math.random() * 20);
+        }
+        console.log(randomFraction());
+        
+    </script>
+</body>
+
+</html>
