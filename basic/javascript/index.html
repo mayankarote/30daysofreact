@@ -229,6 +229,28 @@
         console.log(stats);
         console.log(half(stats));
 
+        //declarative function
+        const bicycle={
+            gear : 2,
+            setGear(newGear){
+                this.gear = newGear;
+            }
+        };
+        bicycle.setGear(3);
+        console.log(bicycle.gear);
+
+        //class syntax
+        function makeClass(){
+            class Vegetable{
+                constructor(name){
+                    this.name = name;
+                }
+            }
+            return Vegetable;
+        }
+        const vegetable =  makeClass();
+        const carrot =  new vegetable('carrot');
+        console.log(carrot.name);
     </script>
 </body>
 
