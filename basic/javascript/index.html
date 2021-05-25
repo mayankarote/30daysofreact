@@ -135,9 +135,24 @@
         const magic = (a,b) => a.concat(b);
         console.log(magic("Hello ","Mayu"));
 
-        //Higher order Arrow funtion
-        
+        //Higher order Arrow funtions : Map, filter, reduce  
+        const realNumberArray=[4, 5.6, -9.8, 3.14, 42, 6,8.52, -2];
+        const SquareList = (arr) => {
+            const squaredIntegers = arr.filter(num => Number.isInteger(num) && num > 6).map( x => x + x);
 
+                return squaredIntegers;
+        };
+        const squaredIntegers = SquareList(realNumberArray);
+        console.log(squaredIntegers);
+
+        //Default Parameters
+        const increment =  (function(){
+            return function increment(number, value=1){
+                return number + value;
+            };
+        })();
+        console.log(increment(5,2));
+        console.log(increment(5));
     </script>
 </body>
 
