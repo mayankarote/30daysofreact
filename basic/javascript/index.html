@@ -180,8 +180,30 @@
             return tempofTommorow;
         }
         console.log(getTempofTmrrw(AVG_TEMPERATURE));
+       
+        //Destructuring Assignment with nested objects
+        const LOCAL_FORCAST = {
+            today : {min: 72, max: 83},
+            tommorow : {min: 73.3, max:84.6}
+        };
+        function getMaxofTmrw(forecast){
+            "use strict";
+            const {tommorow: {max:maxOfTomorrow}} = forecast;
+            return  maxOfTomorrow;
+        }
+        console.log(getMaxofTmrw(LOCAL_FORCAST));
 
-        
+        //Use Destructuring Assignment to assign variable from arrays
+        const [z,x,y] = [1,2,3,4,5,6];
+        console.log(z,x,y);
+
+        let a=8, b=6;
+        (()=>{
+            "use strict";
+            [a,b]=[b,a]
+        })();
+        console.log(a + "\n" + b);
+
     </script>
 </body>
 
